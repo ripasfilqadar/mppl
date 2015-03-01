@@ -21,7 +21,7 @@ class BarangModel extends CI_Model
 	function  tambahbarang($data)
 	{
 		print_r($data);
-		//$this->db->insert('barang',$data);
+		$this->db->insert('barang',$data);
 
 		$sql='select id_barang from barang order by id_barang desc limit 1';
 		$id=$this->db->query($sql);
@@ -41,7 +41,7 @@ class BarangModel extends CI_Model
 		
 		$id=$id+1;
 		$id="BRG_".$id;
-		$sql="update barang set ID_BARANG='$id', FOTO='$id' where ID_BARANG=0";
+		$sql="update barang set ID_BARANG='$id', FOTO='$id' where ID_BARANG='a'";
 		$query=$this->db->query($sql);
 		return $id;
 
@@ -52,5 +52,13 @@ class BarangModel extends CI_Model
 		$query=$this->db->query($sql);
 		return $query->result_array();
 	}
-	
+	function edit_barang($data,$id)
+	{
+		$this->db->where('ID_BARANG',$id);
+		$this->db->update('barang',$data);
+	}
+	function hapus_barang($id)
+	{
+		$this->db->delete('barang',array('ID_BARANG'=>$id));
+	}
 }

@@ -24,7 +24,7 @@
 
 </head>
 <body class="metro">
-    <header  class="bg-dark" style="height: 65px;">
+    <header  class="bg-dark" >
     <div class="navbar">
         <nav class="navigation-bar dark" >
             <nav class="navigation-bar-content container" >

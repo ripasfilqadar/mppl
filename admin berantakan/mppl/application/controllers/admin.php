@@ -14,25 +14,40 @@ class Admin extends CI_Controller
 	}
 	function tambah_barang()
 	{	
-		$this->cek_login();
-		$nama = $this->input->post('nama');
-		$harga = $this->input->post('harga');
-		$deskripsi = $this->input->post('deskripsi');
-		$kategori=$this->input->post('kategori');
-		$foto = $this->input->post('foto');
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('nama', 'nama', 'required');
+		$this->form_validation->set_rules('harga', 'harga', 'required');
+		$this->form_validation->set_rules('deskripsi', 'deskripsi', 'required');
+		$this->form_validation->set_rules('kategori', 'kategori', 'required');
+		if ($this->form_validation->run()==FALSE)
+		{
+			$data['kategori']=$this->barangModel->getKategori();
+			$this->load->view('header');
+			$this->load->view('tambahbarang',$data);
+		}
+		else
+		{
+			$this->cek_login();
+			$nama = $this->input->post('nama');
+			$harga = $this->input->post('harga');
+			$deskripsi = $this->input->post('deskripsi');
+			$kategori=$this->input->post('kategori');
+			$foto = $this->input->post('foto');
+			
+			$data = array(
+			   'id_barang' => 'a',
+			   'id_kategori'=>$kategori,
+			   'nama_barang' =>$nama,
+			   'harga' => $harga,
+			   'deskripsi' => $deskripsi,
+			   'foto'=>"temp"
+			);
+		 	  
+			$id = $this->barangModel->tambahbarang($data);
+			$this->do_upload($id);
+			redirect(base_url()."admin_page/listBarang");
+		}
 		
-		$data = array(
-		   'id_barang' => 'a',
-		   'id_kategori'=>$kategori,
-		   'nama_barang' =>$nama,
-		   'harga' => $harga,
-		   'deskripsi' => $deskripsi,
-		   'foto'=>"temp"
-		);
-	   
-		$id = $this->barangModel->tambahbarang($data);
-		$this->do_upload($id);
-		//redirect(base_url()."admin_page/listBarang");
 	}
 	public function listBarang()
 	{
@@ -52,12 +67,6 @@ class Admin extends CI_Controller
 		$this->load->view('admin/addBarang');
 	}
 	
-	function editBarang($id=0)
-	{
-		$this->cek_login();
-		$data['data']=$this->barangModel->get_barang_by_id($id);
-		$this->load->view('admin/editBarang',$data);
-	}
 	
 	public function cek_login()
 	{
@@ -90,48 +99,46 @@ class Admin extends CI_Controller
 		return $config['file_name'];
 	}
 	
-	function edit_barang($id)
+	function edit_barang()
 	{
 		$this->cek_login();
-
-		$name = $this->input->post('name');
-		$status = $this->input->post('status');
-		$kondisi = $this->input->post('kondisi');
-		$ket = $this->input->post('keterangan');
+		$id=$this->input->post('id');
+		$name = $this->input->post('nama');
+		$harga = $this->input->post('harga');
+		$deskripsi = $this->input->post('deskripsi');
 		
 		$data = array(
-		   'nama_barang' =>$name ,
-		   'kondisi' => $kondisi,
-		   'keterangan' => $ket,
-		   'status'=>$status
+		   'nama_barang' =>$name,
+		   'harga' => $harga,
+		   'deskripsi' => $deskripsi
 		);
 		
-		$b=$this->barangModel->edit($data,$id);
+		$b=$this->barangModel->edit_barang($data,$id);
 		redirect($this->agent->referrer());
 	}
 	
-	public function editphoto($id)
+	public function editphoto()
 	{
 		$this->cek_login();
+		$id=$this->input->post('id');
 		$this->hapusfoto($id);
 		$filename = $this->do_upload($id);
-		$this->barangModel->updateFoto($id,$filename);
 		redirect($this->agent->referrer());
 	}
 	
 	public function hapusfoto($id)
 	{
-		$gambar = $this->barangModel->get_barang_by_id($id)->gambar;
-		$path="./picture/$gambar";
+		$path="./picture/$id.png";
 		if (unlink($path));
 	}
 	
-	public function hapus_barang($id)
+	public function hapus_barang()
 	{
 		$this->cek_login();
+		$id=$this->input->post('id');
 		$this->hapusfoto($id);
-		$this->barangModel->hapus($id);
-		redirect(base_url()."admin/listBarang");
+		$this->barangModel->hapus_barang($id);
+		redirect(base_url()."admin_page/listBarang");
 	}
 	
 	public function detailPeminjaman($id=0)

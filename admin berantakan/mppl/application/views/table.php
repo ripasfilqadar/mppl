@@ -11,7 +11,7 @@
                 padding: 10,
                 content: '',
                 onShow: function(_dialog){
-                    var content = '<div align="center"><form action="<?php  echo base_url(); ?>admin/hapus_barang/'+id+'"><h3>Apakah Anda yakin untuk menghapus <br/><b>"'+name+'"</b> dari data barang?</h3><br/><input type="submit" class="primary large" id="confirmButton" value="Ya">&nbsp;<input type="button" class="primary large" id="cancelButton" onclick="$.Dialog.close()" value="Tidak"></form></div>';
+                    var content = '<div align="center"><form  action="<?php echo base_url()?>admin/hapus_barang" method="post"><h3>Apakah Anda yakin untuk menghapus <br/><b>"'+name+'"</b> dari data barang?</h3><br/><input type="hidden" name="id" value="'+id+'"><input type="submit" class="primary large" id="confirmButton" value="Ya">&nbsp;<input type="button" class="primary large" id="cancelButton" onclick="$.Dialog.close()" value="Tidak"></form></div>';
                     $.Dialog.title("Hapus barang");
                     $.Dialog.content(content);
                     $.Metro.initInputs();
