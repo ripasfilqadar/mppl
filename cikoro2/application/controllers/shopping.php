@@ -82,40 +82,36 @@ class Shopping extends CI_Controller {
 		$this->load->view('billing_view');
         }
         
-        	public function save_order()
+    public function save_order()
 	{
-          // This will store all values which inserted  from user.
-		$customer = array(
-			'name' 		=> $this->input->post('name'),
-			'email' 	=> $this->input->post('email'),
-			'address' 	=> $this->input->post('address'),
-			'phone' 	=> $this->input->post('phone')
+            // This will store all values which inserted  from user.
+		$order = array(
+			'NAMA_PEMBELI' 		=> $this->input->post('name'),
+			'ALAMAT_PEMBELI' 	=> $this->input->post('address'),
+			'NO_HP' 	=> $this->input->post('phone'),
+			'TOTAL'	=> 0,
+			'STATUS' => 0,
+			'TANGGAL' => date('Y-m-d')
 		);		
                  // And store user imformation in database.
-		$cust_id = $this->billing_model->insert_customer($customer);
+		$ord_id = $this->billing_model->order($order);
 
-		$order = array(
-			'date' 			=> date('Y-m-d'),
-			'customerid' 	=> $cust_id
-		);		
-
-		$ord_id = $this->billing_model->insert_order($order);
+		$total=0;
 		
 		if ($cart = $this->cart->contents()):
 			foreach ($cart as $item):
 				$order_detail = array(
-					'orderid' 		=> $ord_id,
-					'productid' 	=> $item['id'],
-					'quantity' 		=> $item['qty'],
-					'price' 		=> $item['price']
+					'ID_TRANSAKSI' 		=> $ord_id,
+					'ID_BARANG' 	=> $item['id'],
+					'QUANTITY' 		=> $item['qty']
 				);		
-
+				$total+=$item['price'];
                             // Insert product imformation with order detail, store in cart also store in database. 
-                
 		         $cust_id = $this->billing_model->insert_order_detail($order_detail);
 			endforeach;
 		endif;
-	      
+		$data = array('TOTAL' => $total);
+		$this->billing_model->update_total($data,$ord_id);
                 // After storing all imformation in database load "billing_success".
                 $this->load->view('billing_success');
 	}

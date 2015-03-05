@@ -29,7 +29,7 @@
     <div class="navbar">
         <nav class="navigation-bar dark" >
             <nav class="navigation-bar-content container" >
-                <img src="<?php echo base_url()?>assets/picture/logo.png"  style="height: inherit;width: 60px; margin-left:9%" class="element">    
+                <img src="<?php echo base_url()?>themes/images/logo.png"  style="height: inherit;width: 60px; margin-left:9%" class="element">    
             <span class="element-divider" style="height:100%"></span>
             <a class="element1 pull-menu" href="#"></a>
             <?php if (!isset($header))

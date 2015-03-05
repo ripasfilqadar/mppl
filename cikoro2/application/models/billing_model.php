@@ -9,30 +9,28 @@ class Billing_model extends CI_Model {
      // Get all details ehich store in "products" table in database.
     public function get_all()
 	{
-		$query = $this->db->get('products');
+		$query = $this->db->get('barang');
 		return $query->result_array();
 	}
     
     // Insert customer details in "customer" table in database.
-	public function insert_customer($data)
+	public function order($data)
 	{
-		$this->db->insert('customers', $data);
+		$this->db->insert('transaksi', $data);
 		$id = $this->db->insert_id();
 		return (isset($id)) ? $id : FALSE;		
 	}
 	
-        // Insert order date with customer id in "orders" table in database.
-	public function insert_order($data)
-	{
-		$this->db->insert('orders', $data);
-		$id = $this->db->insert_id();
-		return (isset($id)) ? $id : FALSE;
-	}
-	
+
         // Insert ordered product detail in "order_detail" table in database.
 	public function insert_order_detail($data)
 	{
-		$this->db->insert('order_detail', $data);
+		$this->db->insert('detail_transaksi', $data);
+	}
+	function update_total($data,$id)
+	{
+		$this->db->where('ID_TRANSAKSI',$id);
+		$this->db->update('TRANSAKSI',$data);
 	}
        
 }

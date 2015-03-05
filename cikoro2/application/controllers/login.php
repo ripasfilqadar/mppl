@@ -12,8 +12,8 @@ class Login extends CI_Controller
 	function index()
 	{
 		$data['header']=0;
-		$this->load->view('header',$data);
-		$this->load->view('login');
+		$this->load->view('admin/header',$data);
+		$this->load->view('admin/login');
 
 	}
 	function masuk()
@@ -30,8 +30,8 @@ class Login extends CI_Controller
 		else
 		{
 			$data['checklogin']=1;
-			$this->load->view('header',$data);
-			$this->load->view('login');
+			$this->load->view('admin/header',$data);
+			$this->load->view('admin/login');
 		}
 	}
 	function logout()

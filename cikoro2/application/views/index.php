@@ -30,7 +30,7 @@
             }
         </script>
 	</head>
-    <body>		
+    <body style="width:100%">		
 		
 
 
@@ -43,9 +43,8 @@
 				</div>
 				<div class="">
 					<div class="account pull-right">
-							<ul class="user-menu">				
-							<li><a href="#">Your Cart</a></li>					
-							<li><a href="#">Login</a></li>		
+							<ul class="user-menu">								
+							<li><a href="<?php echo base_url()?>login">Login</a></li>		
 						</ul>
 					</div>
 				</div>
@@ -59,7 +58,7 @@
 			
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
-					<a href="#" class="logo pull-left"><img src="./themes/images/logo.jpg" width="50" height="35" class="site_logo" alt=""></a>
+					<a href="#" class="logo pull-left"><img src="<?php echo base_url()?>themes/images/logo.png" width="50" height="35" class="site_logo" alt=""></a>
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><a href="#">About</a>					
@@ -68,7 +67,7 @@
 									<li><a href="<?php echo base_url()?>index.php/main/lp3m">LP3M</a></li>									
 								</ul>
 							</li>															
-							<li><a href="#">How to Order</a></li>			
+							<li><a href="<?php echo base_url()?>index.php/main/hto">How to Order</a></li>			
 							<li><a href="#">Contact Us</a></li>							
 							<li><a href="#">Best Seller</a></li>
 						</ul>
@@ -88,7 +87,7 @@
 						<div class="span1"></div>
 							<div class="span11">
 								<h4 class="title">
-									<span class="pull-left"><span class="text"><span class="line">Feature <strong>Products</strong></span></span></span>
+									<span class="pull-left"><span class="line">Feature <strong>Products</strong></span></span>
 									<span class="pull-right">
 										
 									</span>
@@ -99,14 +98,14 @@
 								
         
              
-        <div class="span12">
-            <div class="span12"> 
+        <div class="span12" style="margin-left:260px">
+        <h3>
             <?php  $cart_check = $this->cart->contents();
             // If cart is empty, this will show below message.
              if(empty($cart_check)) {
              echo 'To add products to your shopping cart click on "Add to Cart" Button'; 
              }  ?>
-             </div> 
+		</h3> 
         </div>
             
             
@@ -199,15 +198,15 @@
             
             // "$products" send from "shopping" controller,its stores all product which available in database. 
             foreach ($products as $product) {
-                $id = $product['serial'];
-                $name = $product['name'];
-                $description = $product['description'];
-                $price = $product['price'];
+                $id = $product['ID_BARANG'];
+                $name = $product['NAMA_BARANG'];
+                $description = $product['DESKRIPSI'];
+                $price = $product['HARGA'];
                 ?>
 
                 <div id='product_div'>  
                     <div id='image_div'>
-                        <img src="<?php echo base_url() . $product['picture'] ?>"/>
+                        <img src="<?php echo base_url()?>picture/<?php echo $product['FOTO']?>.png"/>
                     </div>
                     <div id='info_product'>
                         <div id='name'><?php echo $name; ?></div>
@@ -291,14 +290,14 @@
 								
 				
 			
-			<section class="our_client" style="margin-bottom:20px">
+			<section class="our_client" style="margin-bottom:10px">
 				<h4 class="title"><span class="text">Clients</span></h4>
 				<div class="row">					
 					<div class="span2">
-						<a href="#"><img alt="Pemkot Makassar" src=""></a>
+						<a href="#"><img alt="LP3M" src=""></a>
 					</div>
 					<div class="span2">
-						<a href="#"><img alt="Dinas Pekerjaan Umum" src=""></a>
+						<a href="#"><img alt="Cikoro Farm" src=""></a>
 					</div>
 				</div>
 			</section>
@@ -311,12 +310,7 @@
 					<a class="twitter" href="#"><img src="<?php echo base_url('themes/images/twit.jpg');?>" style="width:30px" class="site_logo" alt=""></a>
 				</span>	
 			</section>
-		
-
-
-
 		</div>
-
 </div>
 
 
