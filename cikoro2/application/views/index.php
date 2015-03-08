@@ -58,8 +58,7 @@
 			
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
-					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('/themes/images/logo.jpg');?>" width="50" height="35" class="site_logo" alt=""></a>
-					<a href="#" class="logo pull-left"><img src="<?php echo base_url()?>themes/images/logo.png" width="50" height="35" class="site_logo" alt=""></a>
+					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('/themes/images/logo.jpg');?>" width="50" height="35" class="site_logo" alt=""></a>					
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><a href="#">About</a>					
@@ -308,7 +307,7 @@
 			
 				<span class="social_icons">
 					<a class="facebook" href="#"><img src="<?php echo base_url('themes/images/fb.jpg');?>" style="width:30px; " class="site_logo" alt=""></a>
-					<a class="twitter" href="#"><img src="<?php echo base_url('themes/images/twit.jpg');?>" style="width:30px" class="site_logo" alt=""></a>
+					<a class="twitter" href="#"><img src="<?php echo base_url('themes/images/twit.png');?>" style="width:30px" class="site_logo" alt=""></a>
 				</span>	
 			</section>
 		</div>

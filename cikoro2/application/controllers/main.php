@@ -17,18 +17,20 @@ class Main extends CI_Controller {
 	}
 	public function lp3m()
 	{
+		$this->load->view('header_guest');
 		$this->load->view('lp3m');
+		$this->load->view('footer');
 	}
 	public function cikoro()
 	{
+		$this->load->view('header_guest');
 		$this->load->view('cikoro');
-	}
-	public function cart()
-	{
-		$this->load->view('cart');
+		$this->load->view('footer');
 	}
 	function hto()
 	{
+		$this->load->view('header_guest');
 		$this->load->view('hto');
+		$this->load->view('footer');
 	}
 }
