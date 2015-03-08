@@ -57,16 +57,17 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
+					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('themes/images/logo.jpg');?>" width="50" height="35" class="site_logo" alt=""></a>
 					<a href="#" class="logo pull-left"><img src="<?php echo base_url('themes/images/logo.jpg');?>" width="50" height="35" class="site_logo" alt=""></a>
 					<nav id="menu" class="pull-right">
 						<ul>
-							<li><a href="./products.html">About</a>					
+							<li><a href="#">About</a>					
 								<ul>
 									<li><a href="<?php echo base_url()?>index.php/main/cikoro">Cikoro Farm</a></li>									
 									<li><a href="<?php echo base_url()?>index.php/main/lp3m">LP3M</a></li>									
 								</ul>
 							</li>															
-							<li><a href="#">How to Order</a></li>			
+							<li><a href="<?php echo base_url()?>index.php/main/hto">How to Order</a></li>													
 							<li><a href="#">Contact Us</a></li>							
 							<li><a href="#">Best Seller</a></li>
 						</ul>

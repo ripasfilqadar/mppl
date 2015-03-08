@@ -58,6 +58,7 @@
 			
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
+					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('/themes/images/logo.jpg');?>" width="50" height="35" class="site_logo" alt=""></a>
 					<a href="#" class="logo pull-left"><img src="<?php echo base_url()?>themes/images/logo.png" width="50" height="35" class="site_logo" alt=""></a>
 					<nav id="menu" class="pull-right">
 						<ul>
