@@ -84,8 +84,7 @@ class Shopping extends CI_Controller {
         
     public function save_order()
 	{
-            // This will store all values which inserted  from user.
-		$order = array(
+            $order = array(
 			'NAMA_PEMBELI' 		=> $this->input->post('name'),
 			'ALAMAT_PEMBELI' 	=> $this->input->post('address'),
 			'NO_HP' 	=> $this->input->post('phone'),

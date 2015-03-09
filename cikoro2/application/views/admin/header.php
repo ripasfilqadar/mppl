@@ -46,9 +46,17 @@
                     <a   href="<?php echo base_url()?>admin_page/listTransaksi" style="font-size: x-large; color:white">Daftar Pemesanan</a>
                 </div>
                 </li>
+                <li>
             </ul>
+            <div class="no-tablet-portrait no-phone">
+            <span class="element-divider place-right"></span>
+            <div class="element place-right" title="Logout"><span ><a href="<?php echo base_url()?>user/logout" style="font-size: x-large; color:white"> Logout</a></span> <span class="github-watchers"></span></div>
+            </div>
+
             <?php } ?>
             </nav>
+            <span class="element-divider" style="height:100%"></span>
+
         </nav>
     </div>
     </header>
