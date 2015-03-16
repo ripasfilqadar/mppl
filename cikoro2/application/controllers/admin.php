@@ -7,6 +7,7 @@ class Admin extends CI_Controller
 		$this->load->model('barangModel');
 		$this->load->model('transaksi');
 		$this->load->helper('file');
+		$this->load->model('userModel');
 	}
 	function index()
 	{
@@ -22,9 +23,8 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('deskripsi', 'deskripsi', 'required');
 		if ($this->form_validation->run()==FALSE)
 		{
-			$data['kategori']=$this->barangModel->getKategori();
-			$this->load->view('header');
-			$this->load->view('tambahbarang',$data);
+			$this->load->view('admin/header');
+			$this->load->view('tambahbarang');
 		}
 		else
 		{
@@ -155,6 +155,13 @@ class Admin extends CI_Controller
 		$status=$this->input->post('status');
 		$this->transaksi->edit_status($id,$status);
 		redirect('admin_page/listTransaksi');
+	}
+	function changepassword()
+	{
+		$password=$this->input->post('password');
+		$password2=$this->input->post('password2');
+		$this->userModel->changepassword($password);
+		redirect('admin_page');
 	}
 }
 

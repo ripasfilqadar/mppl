@@ -4,6 +4,7 @@ class UserModel extends CI_Model
 	function UserModel()
 	{
 		parent::__construct();
+	
 	}
 	
 	function check($username,$password)
@@ -19,6 +20,24 @@ class UserModel extends CI_Model
 			}
 		}
 		catch(Exception $e){
+			return false;
+		}
+	}
+	function changepassword($password,$password2)
+	{
+		try {
+			$sql="select * from user where password='$password2'";
+			if($query->result()){
+				$sql="update user set password='$password'";
+				$query=$this->db->query($sql);
+				return true;
+			}
+			else{
+				return false;
+			}
+		} 
+
+		catch (Exception $e) {
 			return false;
 		}
 	}

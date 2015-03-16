@@ -28,6 +28,7 @@ background-color:#330033;
 }
 </style>
 <body class="metro">
+
     <header  class="bg-dark" >
     <div class="navbar">
         <nav class="navigation-bar dark" >
@@ -89,9 +90,9 @@ background-color:#330033;
                 background: "#000000",
                 onShow: function(_dialog){
                     var content = '<form name="passwordForm" action="<?php echo base_url()?>admin/changepassword" method="POST" onsubmit="return tes()"><div class="input-control text">'+
-                     '<input type="text" placeholder="Masukkan Password Lama" name="password"/><button class="btn-clear"></button></div>'+
-                     '<div class="input-control text"><input id="password1" type="text" placeholder="Masukkan Password Baru" name="password1"/><button class="btn-clear"></button></div><div class="input-control text">'+
-                     '<input type="text" id="password2" placeholder="Masukkan Lagi Password Baru" name="password2"><button class="btn-clear"></button></div><div><input type="submit" class="default large" id="confirmButton"></div></form>';
+                     '<input type="password" placeholder="Masukkan Password Lama" name="password"/><button class="btn-clear"></button></div>'+
+                     '<div class="input-control text"><input id="password1" type="password" placeholder="Masukkan Password Baru" name="password1"/><button class="btn-clear"></button></div><div class="input-control text">'+
+                     '<input type="password" id="password2" placeholder="Masukkan Lagi Password Baru" name="password2"><button class="btn-clear"></button></div><div><input type="submit" class="default large" id="confirmButton"></div></form>';
                     $.Dialog.title("Rubah Password");
                     $.Dialog.content(content);
                     $.Metro.initInputs();
