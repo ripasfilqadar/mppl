@@ -12,7 +12,14 @@
                 padding: 10,
                 content: '',
                 onShow: function(_dialog){
-                    var content = '<div align="center"><form method="POST" action="<?php  echo base_url(); ?>admin/editstatus"><h3>Pilih Status</h3><br/><input type="hidden" name="id" value="'+id+'"><select style="width:250px" class="input-control select" name="status"><option value="0">Belum Melakukan Pembayaran</option><option value="1">Sudah Membayar</option><option value="2">Barang Sudah Dikirim</option></select><div><input type="submit" class="default large" id="confirmButton" value="Ubah"></div></form></div>';
+                    var content = '<div align="center"><form method="POST" action="<?php  echo base_url(); ?>admin/editstatus">'+
+                    '<h3>Pilih Status</h3><br/>'+
+                    '<input type="hidden" name="id" value="'+id+'">'+
+                    '<select style="width:250px" class="input-control select" name="status">'+
+                    '<option value="0">Belum Melakukan Pembayaran</option>'+
+                    '<option value="1">Sudah Membayar</option>'+
+                    '<option value="2">Barang Sudah Dikirim</option></select>'+
+                    '<div><input type="submit" class="default large" id="confirmButton" value="Ubah"></div></form></div>';
                     $.Dialog.title("Edit Status");
                     $.Dialog.content(content);
                     $.Metro.initInputs();

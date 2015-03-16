@@ -20,6 +20,13 @@
     <link href="<?php  echo base_url(); ?>css/metro-bootstrap-responsive.css" rel="stylesheet">
 
 </head>
+<style type="text/css">
+    .ui-dialog-title {
+font-family: 'Andika', sans-serif;
+color: #FFFFCC;  
+background-color:#330033;
+}
+</style>
 <body class="metro">
     <header  class="bg-dark" >
     <div class="navbar">
@@ -50,7 +57,13 @@
             </ul>
             <div class="no-tablet-portrait no-phone">
             <span class="element-divider place-right"></span>
-            <div class="element place-right" title="Logout"><span ><a href="<?php echo base_url()?>user/logout" style="font-size: x-large; color:white"> Logout</a></span> <span class="github-watchers"></span></div>
+            <div class="element place-right" style="margin: 10px 10px 0px 0px;">
+                    <a class="dropdown-toggle" href="#" style="font-size: x-large;">Akun</a>
+                    <ul class="dropdown-menu dark" data-role="dropdown">
+                        <li><a href="javascript:password();" >Rubah Password</a></li>
+                        <li><a href="<?php echo base_url()?>admin_page/editBarang">Logout</a></li>
+                    </ul>
+                </div>
             </div>
 
             <?php } ?>
@@ -60,3 +73,40 @@
         </nav>
     </div>
     </header>
+
+    <script>
+    function password()
+    {
+                $.Dialog({
+                shadow: true,
+                overlay: true,
+                draggable: true,
+                width: 450,
+                padding: 30,
+                height:300,
+                content: '',
+                border:"2px solid white",
+                background: "#000000",
+                onShow: function(_dialog){
+                    var content = '<form name="passwordForm" action="<?php echo base_url()?>admin/changepassword" method="POST" onsubmit="return tes()"><div class="input-control text">'+
+                     '<input type="text" placeholder="Masukkan Password Lama" name="password"/><button class="btn-clear"></button></div>'+
+                     '<div class="input-control text"><input id="password1" type="text" placeholder="Masukkan Password Baru" name="password1"/><button class="btn-clear"></button></div><div class="input-control text">'+
+                     '<input type="text" id="password2" placeholder="Masukkan Lagi Password Baru" name="password2"><button class="btn-clear"></button></div><div><input type="submit" class="default large" id="confirmButton"></div></form>';
+                    $.Dialog.title("Rubah Password");
+                    $.Dialog.content(content);
+                    $.Metro.initInputs();
+                }
+            });
+        
+    }
+    function tes()
+    {
+        var password1=document.forms["passwordForm"]["password1"].value;
+        var password2=document.forms["passwordForm"]["password2"].value;
+        if (password2==password1 && password1!="")
+        {
+            return true;
+        }
+        return false;
+    }
+    </script>
