@@ -97,8 +97,8 @@
 					</div>
 								
         
-             
-        <div class="span12" style="margin-left:260px">
+         <center>    
+        <div class="span12">
         <h3>
             <?php  $cart_check = $this->cart->contents();
             // If cart is empty, this will show below message.
@@ -107,7 +107,7 @@
              }  ?>
 		</h3> 
         </div>
-            
+          <center>
             
 
 
