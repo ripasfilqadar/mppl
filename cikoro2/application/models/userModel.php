@@ -26,14 +26,13 @@ class UserModel extends CI_Model
 	function changepassword($password,$password2)
 	{
 		try {
-			$sql="select * from user where password='$password'";
+			$sql="select * from user where password=md5('$password')";
 			$query=$this->db->query($sql);
 			if($query->result()){
-				
-				$sql="update user set password='$password2'";
+				$sql="update user set password=md5('$password2')";
 				$query=$this->db->query($sql);
 				return "berhasil";
-			}
+				} 
 			else{
 				return "gagal";
 			}

@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url('themes/images/logo.jpg');?>">
     <script src="<?php  echo base_url(); ?>js/jquery/jquery.min.js"></script>
     <script src="<?php  echo base_url(); ?>js/jquery/jquery.widget.min.js"></script>
 
@@ -18,7 +19,7 @@
     <link rel="stylesheet" href="<?php  echo base_url(); ?>css/docs.css">
     <link href="<?php  echo base_url(); ?>js/prettify/prettify.css" rel="stylesheet">
     <link href="<?php  echo base_url(); ?>css/metro-bootstrap-responsive.css" rel="stylesheet">
-
+    <title>Admin Page</title>
 </head>
 <style type="text/css">
     .ui-dialog-title {

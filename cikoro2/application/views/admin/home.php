@@ -13,7 +13,6 @@
                 content: '',
                 onShow: function(_dialog){
                     var content = '<div align="center"><h3>Perubahan Password '+status+'</h3></div>';
-                    $.Dialog.title("Hapus barang");
                     $.Dialog.content(content);
                     $.Metro.initInputs();
                 }
@@ -22,8 +21,11 @@
 
 </script>
 <?php 
-if (isset($changePassword) && $changePassword!=0)
-{?>
+
+if (isset($changePassword) && $changePassword!="")
+{
+    echo "lala".$changePassword;
+?>
 <script>
 checkPassword("<?php echo $changePassword?>")
 </script>
