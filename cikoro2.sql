@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2015 at 05:59 AM
+-- Generation Time: Mar 22, 2015 at 10:21 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -42,8 +42,8 @@ CREATE TABLE IF NOT EXISTS `barang` (
 INSERT INTO `barang` (`ID_BARANG`, `NAMA_BARANG`, `HARGA`, `FOTO`, `DESKRIPSI`) VALUES
 ('BRG_1', 'weqwe', 21313, 'BRG_1', 'sdsar'),
 ('BRG_2', 'weqwe', 21313, 'BRG_2', 'sdsar'),
-('BRG_3', '', 1213, 'BRG_3', 'zxx'),
-('BRG_4', 'Barang 4', 123, 'BRG_4', 'safa');
+('BRG_3', 'lalala', 133, 'BRG_3', 'sdasd'),
+('BRG_5', 'sdds', 123, 'BRG_5', 'dffds');
 
 -- --------------------------------------------------------
 
@@ -66,6 +66,20 @@ CREATE TABLE IF NOT EXISTS `detail_transaksi` (
 INSERT INTO `detail_transaksi` (`ID_BARANG`, `ID_TRANSAKSI`, `QUANTITY`) VALUES
 ('BRG_2', '3', 1),
 ('BRG_4', '2', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kontak`
+--
+
+CREATE TABLE IF NOT EXISTS `kontak` (
+  `id_kontak` int(11) NOT NULL AUTO_INCREMENT,
+  `Nama` varchar(30) NOT NULL,
+  `E-Mail` varchar(30) NOT NULL,
+  `NO_HP` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_kontak`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
