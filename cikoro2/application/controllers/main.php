@@ -9,6 +9,7 @@ class Main extends CI_Controller {
         $this->load->helper('form');
         $this->load->helper('url');
         $this->load->library('cart');
+        $this->load->model('transaksi');
     }
 
 	public function index()
@@ -32,5 +33,26 @@ class Main extends CI_Controller {
 		$this->load->view('header_guest');
 		$this->load->view('hto');
 		$this->load->view('footer');
+	}
+	function kontak()
+	{
+		$this->load->view('header_guest');
+		$this->load->view('kontak');
+		$this->load->view('footer');
+	}
+	function submitkontak()
+	{
+		$nama=$this->input->post('nama');
+		$email=$this->input->post('email');
+		$hp=$this->input->post('hp');
+		$pesan=$this->input->post('pesan');
+		$data = array('id_kontak' =>"",
+		'Nama'=>$nama,
+		'E-mail'=>$email,
+		'NO_HP'=>$hp,
+		'pesan'=>$pesan,
+		'status'=>'Belum Dibalas');
+		$this->transaksi->submitkontak($data);
+		redirect('shopping');
 	}
 }

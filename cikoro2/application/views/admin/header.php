@@ -57,6 +57,11 @@ background-color:#330033;
                 </div>
                 </li>
                 <li>
+                <div class="element" style="margin-top: 10px;">
+                    <a href="<?php echo base_url()?>admin_page/pesan" style="font-size: x-large; color:white">Pesan</a>
+                </div>
+                </li>
+                <li>
             </ul>
             <div class="no-tablet-portrait no-phone">
             <span class="element-divider place-right"></span>

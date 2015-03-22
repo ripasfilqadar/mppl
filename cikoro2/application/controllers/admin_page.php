@@ -71,5 +71,15 @@ class Admin_page extends CI_Controller
 		$this->load->view('admin/detail_transaksi',$data);
 
 	}
+	function pesan()
+	{
+		$this->load->view('admin/header');
+		$this->load->view('admin/pesan');
+	}
+	function get_pesan()
+	{
+		$data['pesan']=$this->transaksi->getpesan();
+		$this->load->view('admin/pesanData',$data);
+	}
 	
 }

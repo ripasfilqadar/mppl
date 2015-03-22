@@ -22,7 +22,7 @@
 
 </script>
 <?php 
-if (isset($changePassword))
+if (isset($changePassword) && $changePassword!=0)
 {?>
 <script>
 checkPassword("<?php echo $changePassword?>")

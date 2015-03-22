@@ -68,7 +68,7 @@
 								</ul>
 							</li>															
 							<li><a href="<?php echo base_url()?>index.php/main/hto">How to Order</a></li>			
-							<li><a href="#">Contact Us</a></li>							
+							<li><a href="<?php echo base_url()?>main/kontak">Contact Us</a></li>							
 							<li><a href="#">Best Seller</a></li>
 						</ul>
 					</nav>

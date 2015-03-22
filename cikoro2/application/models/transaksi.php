@@ -16,5 +16,29 @@ class Transaksi extends CI_Model
 		$query=$this->db->query($sql);
 		return $query->result();
 	}
+	function submitkontak($data)
+	{
+		try {
+			$this->db->insert('kontak',$data);
+			return true;
+			
+		} catch (Exception $e) {
+			echo $e->getMessage();
+			return false;
+			
+		}
+	}
+	function getPesan()
+	{
+		$sql="select * from kontak";
+		$query=$this->db->query($sql);
+		return $query->result();
+	}
+	function updatePesan($id)
+	{
+		$sql="update kontak set status='Sudah Dibalas' where id_kontak='$id'";
+		$query=$this->db->query($sql);
+		return true;
+	}
 
 }

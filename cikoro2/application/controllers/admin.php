@@ -8,6 +8,7 @@ class Admin extends CI_Controller
 		$this->load->model('transaksi');
 		$this->load->helper('file');
 		$this->load->model('userModel');
+		$this->load->library('email');
 	}
 	function index()
 	{
@@ -151,6 +152,7 @@ class Admin extends CI_Controller
 	}
 	function editstatus()
 	{
+		$this->cek_login();
 		$id=$this->input->post('id');
 		$status=$this->input->post('status');
 		$this->transaksi->edit_status($id,$status);
@@ -158,11 +160,41 @@ class Admin extends CI_Controller
 	}
 	function changepassword()
 	{
+		$this->cek_login();
 		$password=$this->input->post('password');
 		$password2=$this->input->post('password2');
 		$data['changePassword']=$this->userModel->changepassword($password,$password2);
 		$this->load->view('admin/header');
 		$this->load->view('admin/home',$data);
+	}
+	function sendemail()
+	{
+		$this->cek_login();
+		$email=$this->input->post('email');
+		$id=$this->input->post('id');
+		$pesan=$this->input->post('pesan');
+		
+		$this->load->library('email');
+	    // FCPATH refers to the CodeIgniter install directory
+	    // Specifying a file to be attached with the email
+	    // if u wish attach a file uncomment the script bellow:
+	    //$file = FCPATH . 'yourfilename.txt';
+	    // Defines the email details
+	    $this->email->from('ripas.filqadar@gmail.com', 'Admin');
+	    $this->email->to($email);
+	    $this->email->subject('Hi Costumer');
+	    $this->email->message($pesan);
+	    //also this script
+	    //$this->email->attach($file);
+	    // The email->send() statement will return a true or false
+	    // If true, the email will be sent
+	    if ($this->email->send()) {
+	    	$this->transaksi->updatePesan($id);
+	    	redirect('admin_page/pesan');
+	    } 
+	    else {
+	    echo $this->email->print_debugger();
+      }
 	}
 }
 
