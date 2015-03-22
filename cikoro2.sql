@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2015 at 10:21 AM
+-- Generation Time: Mar 22, 2015 at 12:39 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -76,10 +76,22 @@ INSERT INTO `detail_transaksi` (`ID_BARANG`, `ID_TRANSAKSI`, `QUANTITY`) VALUES
 CREATE TABLE IF NOT EXISTS `kontak` (
   `id_kontak` int(11) NOT NULL AUTO_INCREMENT,
   `Nama` varchar(30) NOT NULL,
-  `E-Mail` varchar(30) NOT NULL,
+  `EMail` varchar(30) NOT NULL,
   `NO_HP` varchar(20) NOT NULL,
+  `pesan` text NOT NULL,
+  `status` varchar(15) NOT NULL,
   PRIMARY KEY (`id_kontak`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `kontak`
+--
+
+INSERT INTO `kontak` (`id_kontak`, `Nama`, `EMail`, `NO_HP`, `pesan`, `status`) VALUES
+(1, 'ripas', 'rif2602@gmail.com', '0', 'kecewa bray', 'Sudah Dibalas'),
+(2, 'ripas', 'rif2602@gmail.com', '0', 'kecewa bray', 'Sudah Dibalas'),
+(3, 'Barang 4', 'rif2602@gmail.com', '0', 'sdd', 'Sudah Dibalas'),
+(4, 'Barang 4', 'rif2602@gmail.com', '082388166053', 'sc', 'Sudah Dibalas');
 
 -- --------------------------------------------------------
 
