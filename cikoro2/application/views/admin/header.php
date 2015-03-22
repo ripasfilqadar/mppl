@@ -62,7 +62,7 @@ background-color:#330033;
                     <a class="dropdown-toggle" href="#" style="font-size: x-large;">Akun</a>
                     <ul class="dropdown-menu dark" data-role="dropdown">
                         <li><a href="javascript:password();" >Rubah Password</a></li>
-                        <li><a href="<?php echo base_url()?>admin_page/editBarang">Logout</a></li>
+                        <li><a href="<?php echo base_url()?>login/logout">Logout</a></li>
                     </ul>
                 </div>
             </div>

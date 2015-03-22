@@ -40,6 +40,6 @@ class Login extends CI_Controller
 		$this->session->unset_userdata('num_pinjam');
 		$this->session->unset_userdata('status_admin');
 		$this->session->sess_destroy();
-		redirect(base_url());
+		redirect('login');
 	}
 }
