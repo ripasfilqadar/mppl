@@ -1,11 +1,10 @@
-
 <script type="text/javascript">
-	function check()
+	function checkFunction()
 	{
-		
 		var harga=document.getElementById("harga");
 		var y=harga.value;
 		var x=y.length;
+
 		for (i=0; i<x; i++)
 		{
 			if (y.charCodeAt(i)>= 48 && y.charCodeAt(i)<=57)
@@ -28,10 +27,55 @@
                     $.Dialog.content(content);
                     $.Metro.initInputs();
                 }
-            });
-				break;
+				});
+				 return false;
+			break;
 			}
 		}
+		return true;
+	}
+	function validateForm() 
+	{
+	    var x = document.forms["myForm"]["nama"].value;
+	    var z = document.forms["myForm"]["deskripsi"].value;
+	    var y = document.forms["myForm"]["harga"].value;
+	    var check=true;
+	    var content;
+	    if (x == null || x == "") {
+	       content=("<h3><center>Kolom nama harus Diisi</center></h3>");
+	       check=false;
+	    }
+	    else if (y == null || y == "") {
+	         content=("<h3><center>Kolom harga harus Diisi</center></h3>");
+	         check=false;
+	    }
+	    else if (z == null || z == "") {
+	         content=("<h3><center>Kolom deskripsi harus Diisi</center></h3>");
+	        check=false;
+	    }
+	    if (check==false)
+	    {
+	    	 $.Dialog({
+                shadow: true,
+                overlay: true,
+                draggable: true,
+                icon: '<span class="icon-warning"></span>',
+                title: 'Hapus barang',
+                width: 550,
+                padding: 10,
+                content: content,
+                onShow: function(_dialog){
+                    $.Dialog.title("Hapus barang");
+                    $.Dialog.content(content);
+                    $.Metro.initInputs();
+                }
+            });
+	    }
+	    else{
+	    	check=checkFunction();	
+	    }
+	   	
+	    return check;
 	}
 </script>
 
@@ -40,7 +84,7 @@
 <div class="validation"> 
 	<?php echo validation_errors(); ?>	
 </div>
-	<form action="<?php echo base_url()?>admin/tambah_barang" method="post" enctype="multipart/form-data">
+	<form action="<?php echo base_url()?>admin/tambah_barang" method="post" name="myForm" enctype="multipart/form-data" onsubmit="return validateForm()">
 		<div class="input-control text">
 		 <label class="formlabel">Nama Barang</label>
 	    <input type="text" name="nama" placeholder="Nama Barang"/>
@@ -48,7 +92,7 @@
 		</div>
 		<label class="formlabel">Harga Barang</label>
 		<div class="input-control text">
-	    <input type="text" name="harga" placeholder="Harga Barang" id="harga" onblur="check()">
+	    <input type="text" name="harga" placeholder="Harga Barang" id="harga" onblur="checkFunction()">
 	    <button class="btn-clear"></button>
 		</div>
 		<label class="formlabel">Deskripsi Barang</label>

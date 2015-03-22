@@ -110,6 +110,10 @@ background-color:#330033;
         {
             return true;
         }
+        else
+        {
+            alert('Password yang anda masukkan tidak sama');
+        }
         return false;
     }
     </script>

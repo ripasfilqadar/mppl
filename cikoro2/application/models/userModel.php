@@ -32,15 +32,15 @@ class UserModel extends CI_Model
 				
 				$sql="update user set password='$password2'";
 				$query=$this->db->query($sql);
-				return true;
+				return "berhasil";
 			}
 			else{
-				return false;
+				return "gagal";
 			}
 		} 
 
 		catch (Exception $e) {
-			return false;
+			return "gagal";
 		}
 	}
 }
