@@ -49,6 +49,6 @@
 			<input type="hidden" name="id" value="<?php echo $barang[0]['ID_BARANG']?>">
 			<input type="submit" class="default large on-right" value="Edit Foto">
 		</form>
-		<?php print_r($barang)?>
+	
 		
 </div>

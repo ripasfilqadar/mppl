@@ -25,7 +25,7 @@ class Login extends CI_Controller
 		{
 			$data=array('username'=>$username);
 		$this->session->set_userdata($data);
-		redirect('admin_page');
+		redirect('admin_page/listbarang');
 		}
 		else
 		{

@@ -149,14 +149,14 @@
                       <?php echo $item['name']; ?>
                             </td>
                             <td style="text-align:center">
-                                $ <?php echo number_format($item['price'], 2); ?>
+                                Rp <?php echo number_format($item['price'], 2); ?>
                             </td>
                             <td style="text-align:center">
                             <?php echo form_input('cart[' . $item['id'] . '][qty]', $item['qty'], 'maxlength="3" size="1" style="text-align: right"'); ?>
                             </td>
                         <?php $grand_total = $grand_total + $item['subtotal']; ?>
                             <td style="text-align:center">
-                                $ <?php echo number_format($item['subtotal'], 2) ?>
+                                Rp <?php echo number_format($item['subtotal'], 2) ?>
                             </td>
                             <td style="text-align:center">
                               
@@ -168,7 +168,7 @@
                      <?php endforeach; ?>
                     </tr>
                     <tr>
-                        <td><b>Order Total: $<?php 
+                        <td><b>Order Total: Rp <?php 
                         
                         //Grand Total.
                         echo number_format($grand_total, 2); ?></b></td>
@@ -212,7 +212,7 @@
                         <div id='name'><?php echo $name; ?></div>
                         <div id='desc'>  <?php echo $description; ?></div>
                         <div id='rs'><b>Price</b>:<big style="color:green">
-                            $<?php echo $price; ?></big></div>
+                            Rp <?php echo $price; ?></big></div>
                         <?php
                         
                         // Create form and send values in 'shopping/add' function.
