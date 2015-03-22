@@ -160,7 +160,7 @@ class Admin extends CI_Controller
 	{
 		$password=$this->input->post('password');
 		$password2=$this->input->post('password2');
-		$this->userModel->changepassword($password);
+		$this->userModel->changepassword($password,$password2);
 		redirect('admin_page');
 	}
 }
