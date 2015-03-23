@@ -12,7 +12,7 @@
 		<title>Guest</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
-		<link rel="icon" type="image/x-icon" href="<?php echo base_url('themes/images/logo.jpg');?>" />
+		<link rel="icon" type="image/x-icon" href="<?php echo base_url('themes/images/logo.png');?>" />
 		<link href="<?php echo base_url('themes/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('themes/bootstrap/css/bootstrap-responsive.min.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('themes/css/bootstrappage.css');?>" rel="stylesheet"/>
@@ -57,7 +57,7 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
-					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('themes/images/logo.jpg');?>" width="50" height="35" class="site_logo" alt=""></a>
+					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('themes/images/logo_new.png');?>" width="50" height="35" class="site_logo" alt=""></a>
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><a href="#">About</a>					
@@ -68,7 +68,6 @@
 							</li>															
 							<li><a href="<?php echo base_url()?>index.php/main/hto">How to Order</a></li>													
 							<li><a href="<?php echo base_url()?>main/kontak">Contact Us</a></li>							
-							<li><a href="#">Best Seller</a></li>
 						</ul>
 					</nav>
 				</div>

@@ -5,7 +5,7 @@
 		<title>Welcome to Cikoro Farm</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
-		<link rel="icon" type="image/x-icon" href="<?php echo base_url('themes/images/logo.jpg');?>" />
+		<link rel="icon" type="image/x-icon" href="<?php echo base_url('themes/images/logo.png');?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('themes/css/style.css');?>">
 		<link href="<?php echo base_url('themes/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">      
 		<link href="<?php echo base_url('themes/bootstrap/css/bootstrap-responsive.min.css');?>" rel="stylesheet">
@@ -29,6 +29,13 @@
                 }
             }
         </script>
+
+        <style>
+  		.carousel-inner > .item > img,
+  		.carousel-inner > .item > a > img 
+  		{width: 70%;
+     	 margin: auto;}
+  </style>
 	</head>
     <body style="width:100%">		
 		
@@ -36,11 +43,6 @@
 
 		<div id="top-bar" class="container">
 			<div class="row">
-				<div class="span4">
-					<form method="POST" class="search_form">
-						<input type="text" class="input-block-level search-query" Placeholder="Cari Nama Produk">
-					</form>
-				</div>
 				<div class="">
 					<div class="account pull-right">
 							<ul class="user-menu">								
@@ -58,7 +60,7 @@
 			
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
-					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('/themes/images/logo.jpg');?>" width="50" height="35" class="site_logo" alt=""></a>					
+					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('/themes/images/logo_new.png');?>" width="50" height="35" class="site_logo" alt=""></a>					
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><a href="#">About</a>					
@@ -69,7 +71,6 @@
 							</li>															
 							<li><a href="<?php echo base_url()?>index.php/main/hto">How to Order</a></li>			
 							<li><a href="<?php echo base_url()?>main/kontak">Contact Us</a></li>							
-							<li><a href="#">Best Seller</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -97,7 +98,7 @@
 					</div>
 								
         
-         <center>    
+        <center> 
         <div class="span12">
         <h3>
             <?php  $cart_check = $this->cart->contents();
@@ -107,7 +108,8 @@
              }  ?>
 		</h3> 
         </div>
-          <center>
+        </center>
+          
             
 
 
@@ -243,70 +245,60 @@
         </div>
 
 
-
-											
-												
-						
-						<div class="row feature_box">
-
-
-							<div class="span4"></div>							
-							<div class="span4">
-								<div class="service" >
-									<div class="responsive">	
-										<img src="<?php echo base_url('themes/images/feature_img_2.png');?>" alt="" />
-										<h4>MODERN <strong>DESIGN</strong></h4>
-										<p></p>									
-									</div>
-								</div>
-							</div>
-							
-							<div class="span5">	
-								<div class="service" >
-									<div class="customize">			
-										<img src="<?php echo base_url('themes/images/feature_img_1.png');?>" alt="" />
-										<h4>FREE <strong>SHIPPING</strong></h4>
-										<p></p>
-									</div>
-								</div>
-							</div>
-							
-							<div class="span4">
-								<div class="service" >
-									<div class="support">	
-										<img src="<?php echo base_url('themes/images/feature_img_3.png');?>" alt="" />
-										<h4>24/7 LIVE <strong>SUPPORT</strong></h4>
-										<p></p>
-									</div>
-								</div>
-							</div>
-
-						</div>			
-
 	</section>
 
 
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
 
-								
-				
-			
-			<section class="our_client" style="margin-bottom:10px">
-				<h4 class="title"><span class="text">Clients</span></h4>
-				<div class="row">					
-					<div class="span2">
-						<a href="#"><img alt="LP3M" src=""></a>
-					</div>
-					<div class="span2">
-						<a href="#"><img alt="Cikoro Farm" src=""></a>
-					</div>
-				</div>
-			</section>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="<?php echo base_url('themes/images/carousel/1.jpg');?>" alt="buah" >
+      </div>
+
+      <div class="item">
+        <img src="<?php echo base_url('themes/images/carousel/3.jpg');?>" alt="kebun" >
+      </div>
+    
+      <div class="item">
+        <img src="<?php echo base_url('themes/images/carousel/4.jpg');?>" alt="buah2" >
+      </div>
+
+      <div class="item">
+        <img src="<?php echo base_url('themes/images/carousel/5.jpg');?>" alt="kebun2" >
+      </div>
+
+      <div class="item">
+        <img src="<?php echo base_url('themes/images/carousel/6.jpg');?>" alt="kebun3" >
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only"></span>
+    </a>
+  </div>
+</div>
+		
 			<section id="copyright">
-				<span class="span6"> </span>
-				<span class="span6" >Copyright 2015</span>
+				<span class="span11" >Copyright 2015</span>
 			
 				<span class="social_icons">
-					<a class="facebook" href="#"><img src="<?php echo base_url('themes/images/fb.jpg');?>" style="width:30px; " class="site_logo" alt=""></a>
+					<a class="facebook" href="https://www.facebook.com/pages/Lembaga-Pengkajian-Pedesaan-Pantai-dan-Masyarakat-LP3M-Makassar/155812491140375?fref=ts"><img src="<?php echo base_url('themes/images/fb.jpg');?>" style="width:30px; " class="site_logo" alt=""></a>
 					<a class="twitter" href="#"><img src="<?php echo base_url('themes/images/twit.png');?>" style="width:30px" class="site_logo" alt=""></a>
 				</span>	
 			</section>
