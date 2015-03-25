@@ -58,7 +58,7 @@
 							<li><a href="#">About</a>					
 								<ul>
 									<li><a href="<?php echo base_url()?>index.php/main/cikoro">Cikoro Farm</a></li>									
-									<li><a href="<?php echo base_url()?>index.php/main/lp3m">LP3M</a></li>									
+									<li><a href="<?php echo base_url()?>index.php/main/lp3m">LP3M (Lembaga Pengkajian Pedesaan, Pantai dan Masyarakat) Makassar</a></li>									
 								</ul>
 							</li>															
 							<li><a href="<?php echo base_url()?>index.php/main/hto">How to Order</a></li>													

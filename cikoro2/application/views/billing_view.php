@@ -28,7 +28,7 @@ endif;
                         <tr><td>Nomor HP:</td><td><input type="text" name="phone"  required="" /></td></tr>
                         <tr><td><?php
                         // This button for redirect main page.
-                        echo "<a class ='fg-button teal' id='back' href=" . base_url() . "index.php/shopping>Kembali</a>";  ?>
+                        echo "<a class ='fg-button teal' id='back' href=" . base_url() . "index.php/shopping>Kembali Berbelanja</a>";  ?>
                             </td><td><input type="submit" class ='fg-button teal' value="Finalisasi Pembelian" /></td></tr> 
                      
                     </table>
