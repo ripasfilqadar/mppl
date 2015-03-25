@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Welcome to Cikoro Farm</title>
+		<title>Cikoro Farm Online Store</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<link rel="icon" type="image/x-icon" href="<?php echo base_url('themes/images/logo.png');?>" />
@@ -20,7 +20,7 @@
 		<script type="text/javascript">
             // To confirm clear all data in cart.
             function clear_cart() {
-                var result = confirm('Are you sure want to clear all bookings?');
+                var result = confirm('Apakah anda yakin menghapus semua pemesanan?');
 
                 if (result) {
                     window.location = "<?php echo base_url(); ?>shopping/remove/all";
@@ -60,13 +60,13 @@
 			
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
-					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('/themes/images/logo_new.png');?>" width="50" height="35" class="site_logo" alt=""></a>					
+					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('/themes/images/logo_new.png');?>" width="100" height="85" class="site_logo" alt=""></a>					
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><a href="#">About</a>					
 								<ul>
 									<li><a href="<?php echo base_url()?>index.php/main/cikoro">Cikoro Farm</a></li>									
-									<li><a href="<?php echo base_url()?>index.php/main/lp3m">LP3M</a></li>									
+									<li><a href="<?php echo base_url()?>index.php/main/lp3m">LP3M (Lembaga Pengkajian Pedesaan, Pantai dan Masyarakat) Makassar</a></li>									
 								</ul>
 							</li>															
 							<li><a href="<?php echo base_url()?>index.php/main/hto">How to Order</a></li>			
@@ -81,14 +81,15 @@
 
 			<section class="main-content">
 				<div class="row">
-					
+					<br>
+          <br>
 
 					<div class="span12">													
 						<div class="row">
 						<div class="span1"></div>
 							<div class="span11">
 								<h4 class="title">
-									<span class="pull-left"><span class="line">Feature <strong>Products</strong></span></span>
+									<span class="pull-left"><span class="line">Hasil <strong>Perkebunan</strong></span></span>
 									<span class="pull-right">
 										
 									</span>
@@ -99,14 +100,15 @@
 								
         
         <center> 
-        <div class="span12">
-        <h3>
+        <div class="span2"></div>
+        <div class="span10">
+        <h4>
             <?php  $cart_check = $this->cart->contents();
             // If cart is empty, this will show below message.
              if(empty($cart_check)) {
-             echo 'To add products to your shopping cart click on "Add to Cart" Button'; 
+             echo 'Klik tombol "Add to Cart" untuk menambahkan pada daftar Pembelian Anda'; 
              }  ?>
-		</h3> 
+		    </h4> 
         </div>
         </center>
           
@@ -259,6 +261,14 @@
       <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
+    <center> 
+        <div class="span12">
+        <h3>
+             Our Gallery :
+        </h3> 
+        </div>
+    </center>
+
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
@@ -294,8 +304,8 @@
   </div>
 </div>
 		
-			<section id="copyright">
-				<span class="span11" >Copyright 2015</span>
+			<section id="copyright" style="bottom:0; position:relative">
+				<span class="span10" >Copyright 2015</span>
 			
 				<span class="social_icons">
 					<a class="facebook" href="https://www.facebook.com/pages/Lembaga-Pengkajian-Pedesaan-Pantai-dan-Masyarakat-LP3M-Makassar/155812491140375?fref=ts"><img src="<?php echo base_url('themes/images/fb.jpg');?>" style="width:30px; " class="site_logo" alt=""></a>
@@ -303,10 +313,6 @@
 				</span>	
 			</section>
 		</div>
-</div>
-
-
-
 
 		<script src="<?php echo base_url('themes/js/common.js');?>"></script>
 		<script src="<?php echo base_url('themes/js/jquery.flexslider-min.js');?>"></script>

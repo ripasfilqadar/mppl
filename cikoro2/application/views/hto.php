@@ -1,5 +1,8 @@
 			<section class="main-content" style="margin-bottom:100px">
 				<div class="row">
+				<br>
+				<br>
+				<br>
 					<div class="span12">													
 						<div class="row">
 							<div class="span12">
@@ -12,23 +15,21 @@
 
 					<div class="row">
 						<div style="margin-left:40px" >
-					  		<h5>How to Order Our Products</h5>            
+					  		<h5>Alur Pemesanan Produk Kami:</h5>            
 					  		<div style="margin-left:30%">
 					  		<img src="<?php echo base_url('themes/images/hto.jpg');?>" width="450" height="380"> 
 							</div>
 						</div>
 						<div class="span12">
-					  		<h5>Transaksi Order</h5>
+					  		<h5>Alur Transaksi</h5>
 					  		<p>
-					  		1. Find the Product(s) that you want to purchase. 
+					  		1. Cari produk yang anda cari. 
 					  		</p> <p>
-							2. Click the "Add to Cart" button. You will be given the option to remove products, and adjust quantities later.
+							2. Klik tombol "Add to Cart". Anda kemudian akan diberikan pilihan untuk "Clear Cart" dan menyesuaikan kuantitas produk yang ingin anda dibeli dengan klik "Update Cart".
 							</p> <p>
-							3. Then, you will be asked to either "Keep Shopping" or Place Order". 
+							3. Jika anda sudah menyelesaikan pemilihan produk, klik tombol "Place Order" 
 							</p><p>
-							4. When you're ready to submit your order, click the keep shopping?" button to enter a secure area of our website. 
-							</p><p>
-							5. When you go through the checkout process, you are given the choice of payment methods such as Credit Card, Fax, Check, or Purchase Order. 
+							5. Pada halaman selanjutnya anda akan diminta untuk mengisikan Billing Info, yaitu Nama, Alamat, dan Nomor Telepon anda yang akan dijadikan kode unik anda . 
 							</p> <p>
 							6. Submit your order by clicking the "Finalize Order" button (if you fail to do this step, we will not receive your order).
 							</p> <php>

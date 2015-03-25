@@ -1,8 +1,11 @@
 			<section class="main-content" style="margin-bottom:100px">
 				<div class="row">
+				<br>
+				<br>
+				<br>
 					<div class="span12">													
 						<div class="row">
-							<div class="span12">
+							<div class="span11">
 								<h4 class="title">
 									<span class="pull-left"><span class="text"><span class="line">About <strong>LP3M</strong></span></span></span>
 									
@@ -12,7 +15,9 @@
 						<br/>
 						<div class="row">
 							<div class="span12">
-
+								<h5>
+								Tujuan:	
+								</h5>
 								<p>
 									Memfasilitasi proses agar dapat mendorong persamaan persepsi yang berdampak terhadap berkurangnya kesenjangan di dan diantara masyarakat pesisir, laut dan pulau-pulau kecil, masyarakat dataran tinggi, Desa dan Kota.
 								</p>

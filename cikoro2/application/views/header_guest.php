@@ -40,11 +40,6 @@
     <body>		
 		<div id="top-bar" class="container">
 			<div class="row">
-				<div class="span4">
-					<form method="POST" class="search_form">
-						<input type="text" class="input-block-level search-query" Placeholder="Cari Nama Produk">
-					</form>
-				</div>
 				<div class="">
 					<div class="account pull-right">
 							<ul class="user-menu">								
@@ -57,7 +52,7 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
-					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('themes/images/logo_new.png');?>" width="50" height="35" class="site_logo" alt=""></a>
+					<a href="<?php echo base_url()?>" class="logo pull-left"><img src="<?php echo base_url('themes/images/logo_new.png');?>" width="100" height="85" class="site_logo" alt=""></a>
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><a href="#">About</a>					
