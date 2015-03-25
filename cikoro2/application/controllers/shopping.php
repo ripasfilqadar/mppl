@@ -79,7 +79,9 @@ class Shopping extends CI_Controller {
 	}	
         function billing_view(){
                 // Load "billing_view".
+        $this->load->view('header_guest');	
 		$this->load->view('billing_view');
+		$this->load->view('footer');
         }
         
     public function save_order()

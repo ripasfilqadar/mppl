@@ -9,7 +9,7 @@ endif;
 ?>
 <html>
     <head>
-        <title>ge</title>
+        <title>Guest</title>
          <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>themes/css/style.css"/>
     </head>

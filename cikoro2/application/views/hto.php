@@ -29,9 +29,9 @@
 							</p> <p>
 							3. Jika anda sudah menyelesaikan pemilihan produk, klik tombol "Place Order" 
 							</p><p>
-							5. Pada halaman selanjutnya anda akan diminta untuk mengisikan Billing Info, yaitu Nama, Alamat, dan Nomor Telepon anda yang akan dijadikan kode unik anda . 
+							5. Pada halaman selanjutnya anda akan diminta untuk mengisikan Billing Info, yaitu Nama, Alamat, dan Nomor Telepon anda yang akan dijadikan kode unik anda. 
 							</p> <p>
-							6. Submit your order by clicking the "Finalize Order" button (if you fail to do this step, we will not receive your order).
+							6. Selesaikan order anda dengan Klik "Finalize Order" button (if you fail to do this step, we will not receive your order).
 							</p> <php>
 							7. Now you can print the receipt page. You will also receive an e-mailed receipt within minutes of finalizing your order.	
 					  		</p> 
