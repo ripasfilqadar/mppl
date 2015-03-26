@@ -4,7 +4,7 @@ class Admin_page extends CI_Controller
 	function Admin_page()
 	{
 		parent::__construct();
-		$this->load->model('barangModel');
+		$this->load->model('barangmodel');
 		$this->load->model('transaksi');
 	}
 	
@@ -17,13 +17,13 @@ class Admin_page extends CI_Controller
 	function loadBarang()
 	{
 		$this->cek_login();
-		$data['barang']=$this->barangModel->get_all();
+		$data['barang']=$this->barangmodel->get_all();
 		$this->load->view('admin/barangData',$data);
 	}
 	function listBarang()
 	{
 		$this->cek_login();
-		$data['barang']=$this->barangModel->get_all();
+		$data['barang']=$this->barangmodel->get_all();
 		$this->load->view('admin/header');
 		$this->load->view('admin/table',$data);
 	}
@@ -41,7 +41,7 @@ class Admin_page extends CI_Controller
 		{
 			redirect('admin_page/listBarang');
 		}
-		$data['barang']=$this->barangModel->getBarang1($id);
+		$data['barang']=$this->barangmodel->getBarang1($id);
 		$this->load->view('admin/header');
 		$this->load->view('admin/edit',$data);
 	}
@@ -54,7 +54,7 @@ class Admin_page extends CI_Controller
 	function loadTransaksi()
 	{
 		$this->cek_login();
-		$data['transaksi']=$this->barangModel->get_all_transaksi();
+		$data['transaksi']=$this->barangmodel->get_all_transaksi();
 		//print_r($data['transaksi']);
 		$this->load->view('admin/loadTransaksi',$data);
 	}

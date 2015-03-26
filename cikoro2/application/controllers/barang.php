@@ -4,7 +4,7 @@ class Barang extends CI_Controller
 	public function Barang()
 	{
 		parent::__construct();
-		$this->load->model('barangModel');
+		$this->load->model('barangmodel');
 	}
 	
 	function index()
@@ -14,7 +14,7 @@ class Barang extends CI_Controller
 
 	public function loadBarang()
 	{
-		$data['barang']=$this->barangModel->get_all_barang();
+		$data['barang']=$this->barangmodel->get_all_barang();
 		$this->load->view('barangData', $data);
 	}
 }

@@ -1,7 +1,7 @@
 <?php
-class BarangModel extends CI_Model
+class Barangmodel extends CI_Model
 {
-	function BarangModel()
+	function Barangmodel()
 	{
 		parent::__construct();
 	}

@@ -5,7 +5,7 @@ class Login extends CI_Controller
 	function Login()
 	{
 		parent::__construct();
-		$this->load->model('userModel');
+		$this->load->model('usermodel');
 
 	}
 	
@@ -20,7 +20,7 @@ class Login extends CI_Controller
 	{
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$query = $this->userModel->check($username, $password);
+		$query = $this->usermodel->check($username, $password);
 		if ($query==1)
 		{
 			$data=array('username'=>$username);

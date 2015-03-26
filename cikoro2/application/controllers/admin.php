@@ -4,7 +4,7 @@ class Admin extends CI_Controller
 	function Admin ()
 	{
 		parent::__construct();
-		$this->load->model('barangModel');
+		$this->load->model('barangmodel');
 		$this->load->model('transaksi');
 		$this->load->helper('file');
 		$this->load->model('userModel');
@@ -43,7 +43,7 @@ class Admin extends CI_Controller
 			   'foto'=>"temp"
 			);
 		 	  
-			$id = $this->barangModel->tambahbarang($data);
+			$id = $this->barangmodel->tambahbarang($data);
 			$this->do_upload($id);
 			redirect(base_url()."admin_page/listBarang");
 		}
@@ -113,7 +113,7 @@ class Admin extends CI_Controller
 		   'deskripsi' => $deskripsi
 		);
 		
-		$b=$this->barangModel->edit_barang($data,$id);
+		$b=$this->barangmodel->edit_barang($data,$id);
 		redirect($this->agent->referrer());
 	}
 	
@@ -137,7 +137,7 @@ class Admin extends CI_Controller
 		$this->cek_login();
 		$id=$this->input->post('id');
 		$this->hapusfoto($id);
-		$this->barangModel->hapus_barang($id);
+		$this->barangmodel->hapus_barang($id);
 		redirect(base_url()."admin_page/listBarang");
 	}
 	
@@ -147,7 +147,7 @@ class Admin extends CI_Controller
 		if($id==0) redirect(base_url()."admin");	
 		$this->session->set_userdata("id_pinjam", $id);
 		$data["id_pinjam"] = $id;
-		$data["peminjaman"] = $this->barangModel->get_peminjaman_by_id($id);
+		$data["peminjaman"] = $this->barangmodel->get_peminjaman_by_id($id);
 		$this->load->view('admin/detailPeminjaman', $data);
 	}
 	function editstatus()

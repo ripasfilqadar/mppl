@@ -1,7 +1,7 @@
 <?php
-class UserModel extends CI_Model
+class Usermodel extends CI_Model
 {
-	function UserModel()
+	function Usermodel()
 	{
 		parent::__construct();
 	
