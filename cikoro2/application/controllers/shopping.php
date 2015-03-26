@@ -113,6 +113,7 @@ class Shopping extends CI_Controller {
 		endif;
 		$data = array('TOTAL' => $total);
 		$this->billing_model->update_total($data,$ord_id);
+		$this->cart->destroy();
                 // After storing all imformation in database load "billing_success".
                 $this->load->view('billing_success');
 	}

@@ -116,7 +116,7 @@
 
 
 
-            <table id=" table" style="margin-left:15%" >
+            <table id=" table" style="margin:auto; width=80% ";  >
                   <?php
                   // All values of cart store in "$cart". 
                   if ($cart = $this->cart->contents()): ?>
@@ -302,7 +302,7 @@
       <span class="sr-only"></span>
     </a>
   </div>
-</div>
+
 		
 			<section id="copyright" style="bottom:0; position:relative">
 				<span class="span10" >Copyright 2015</span>
@@ -313,7 +313,7 @@
 				</span>	
 			</section>
 		</div>
-
+</div>
 		<script src="<?php echo base_url('themes/js/common.js');?>"></script>
 		<script src="<?php echo base_url('themes/js/jquery.flexslider-min.js');?>"></script>
 		<script type="text/javascript">
