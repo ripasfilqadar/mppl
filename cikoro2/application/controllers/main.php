@@ -48,7 +48,7 @@ class Main extends CI_Controller {
 		$pesan=$this->input->post('pesan');
 		$data = array('id_kontak' =>"",
 		'Nama'=>$nama,
-		'E-mail'=>$email,
+		'Email'=>$email,
 		'NO_HP'=>$hp,
 		'pesan'=>$pesan,
 		'status'=>'Belum Dibalas');
