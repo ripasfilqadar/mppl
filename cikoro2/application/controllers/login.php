@@ -14,6 +14,7 @@ class Login extends CI_Controller
 		$data['header']=0;
 		$this->load->view('admin/header',$data);
 		$this->load->view('admin/login');
+		$this->load->view('admin/footer');
 
 	}
 	function masuk()
@@ -32,6 +33,7 @@ class Login extends CI_Controller
 			$data['checklogin']=1;
 			$this->load->view('admin/header',$data);
 			$this->load->view('admin/login');
+			$this->load->view('admin/footer');
 		}
 	}
 	function logout()

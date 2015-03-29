@@ -13,12 +13,14 @@ class Admin_page extends CI_Controller
 		$this->cek_login();
 		$this->load->view('admin/header');
 		$this->load->view('admin/home');
+		$this->load->view('admin/footer');
 	}
 	function loadBarang()
 	{
 		$this->cek_login();
 		$data['barang']=$this->barangmodel->get_all();
 		$this->load->view('admin/barangData',$data);
+
 	}
 	function listBarang()
 	{
@@ -26,12 +28,14 @@ class Admin_page extends CI_Controller
 		$data['barang']=$this->barangmodel->get_all();
 		$this->load->view('admin/header');
 		$this->load->view('admin/table',$data);
+		$this->load->view('admin/footer');
 	}
 	function tambahbarang()
 	{
 		$this->cek_login();
 		$this->load->view('admin/header');
 		$this->load->view('admin/tambahbarang');
+		$this->load->view('admin/footer');
 	}
 	function editBarang()
 	{
@@ -44,12 +48,14 @@ class Admin_page extends CI_Controller
 		$data['barang']=$this->barangmodel->getBarang1($id);
 		$this->load->view('admin/header');
 		$this->load->view('admin/edit',$data);
+		$this->load->view('admin/footer');
 	}
 	function listTransaksi()
 	{
 		$this->cek_login();
 		$this->load->view('admin/header');
 		$this->load->view('admin/listtransaksi');
+		$this->load->view('admin/footer');
 	}
 	function loadTransaksi()
 	{
@@ -75,6 +81,7 @@ class Admin_page extends CI_Controller
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/pesan');
+		$this->load->view('admin/footer');
 	}
 	function get_pesan()
 	{

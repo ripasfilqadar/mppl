@@ -10,7 +10,7 @@ class Usermodel extends CI_Model
 	function check($username,$password)
 	{
 		try{
-			$sql = "select * from user where username='".$username."' and password='".$password."'";
+			$sql = "select * from user where username='".$username."' and password=md5('".$password."')";
 			$query = $this->db->query($sql);
 			if($query->result()){
 				return 1;

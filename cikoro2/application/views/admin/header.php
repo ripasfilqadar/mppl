@@ -3,22 +3,11 @@
 <head>
     <meta charset="utf-8">
     <link rel="icon" type="image/x-icon" href="<?php echo base_url('themes/images/logo.jpg');?>">
-    <script src="<?php  echo base_url(); ?>js/jquery/jquery.min.js"></script>
-    <script src="<?php  echo base_url(); ?>js/jquery/jquery.widget.min.js"></script>
-
-    <script src="<?php  echo base_url(); ?>js/metro/metro-loader.js"></script>
-    <script src="<?php  echo base_url(); ?>js/metro/metro-hint.js"></script>
-    <script src="<?php  echo base_url(); ?>js/metro/metro-input-control.js"></script>
-    <script src="<?php  echo base_url(); ?>js/metro/metro-button-set.js"></script>
-    <script src="<?php  echo base_url(); ?>js/jquery/jquery.dataTables.js"></script>
-    <script src="<?php  echo base_url(); ?>js/jquery/jquery.mousewheel.js"></script>
-    <script src="<?php  echo base_url(); ?>js/metro.min.js"></script>
-    <script src="<?php  echo base_url(); ?>js/load-metro.js"></script>
-    <script src="<?php  echo base_url(); ?>js/metro/metro-dropdown.js"></script> 
     <link rel="stylesheet" href="<?php  echo base_url(); ?>css/metro-bootstrap.css">
     <link rel="stylesheet" href="<?php  echo base_url(); ?>css/docs.css">
     <link href="<?php  echo base_url(); ?>js/prettify/prettify.css" rel="stylesheet">
     <link href="<?php  echo base_url(); ?>css/metro-bootstrap-responsive.css" rel="stylesheet">
+    <script src="<?php  echo base_url(); ?>js/jquery/jquery.min.js"></script>
     <title>Admin Page</title>
 </head>
 <style type="text/css">
@@ -39,7 +28,7 @@ background-color:#330033;
                 </a>
             <span class="element-divider" style="height:100%"></span>
             <a class="element1 pull-menu" href="#"></a>
-            <?php if (!isset($header))
+            <?php if ($this->session->userdata('username')!=NULL)
             { ?>
                 <ul class="element-menu" >
                 <li>
