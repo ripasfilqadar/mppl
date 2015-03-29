@@ -72,5 +72,5 @@
         </div>    
     </div>
 
-    <script src="js/hitua.js"></script>
+    
     

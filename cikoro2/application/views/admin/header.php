@@ -23,9 +23,19 @@ background-color:#330033;
     <div class="navbar">
         <nav class="navigation-bar dark" >
             <nav class="navigation-bar-content container" >
-            <a href="<?php echo base_url()?>admin_page/listbarang">
+            <?php if ($this->session->userdata('username')!=NULL)
+            {?>
+             <a href="<?php echo base_url()?>admin_page/listbarang">
+             <?php 
+            }
+            else
+            {?>
+                <a href="<?php echo base_url()?>">
+                <?php
+            }
+            ?>
                 <img src="<?php echo base_url()?>themes/images/logo.png"  style="height: inherit;width: 60px; margin-left:9%" class="element">    
-                </a>
+             </a>
             <span class="element-divider" style="height:100%"></span>
             <a class="element1 pull-menu" href="#"></a>
             <?php if ($this->session->userdata('username')!=NULL)

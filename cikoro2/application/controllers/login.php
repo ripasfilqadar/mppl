@@ -12,6 +12,10 @@ class Login extends CI_Controller
 	function index()
 	{
 		$data['header']=0;
+		if ($this->session->userdata('username')!=NULL)
+		{
+			redirect('admin_page');
+		}
 		$this->load->view('admin/header',$data);
 		$this->load->view('admin/login');
 		$this->load->view('admin/footer');
@@ -21,6 +25,10 @@ class Login extends CI_Controller
 	{
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
+		if ($this->session->userdata('username')!=NULL)
+		{
+			redirect('admin_page');
+		}
 		$query = $this->usermodel->check($username, $password);
 		if ($query==1)
 		{

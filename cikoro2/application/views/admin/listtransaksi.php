@@ -80,7 +80,7 @@
     </div>
     <div style="visibility:hidden; ">
     </div>
-    <script src="js/hitua.js"></script>
+    
     <script type="text/javascript">
     var id;
         function details(id)
@@ -112,6 +112,5 @@
                     } );
                 });
         }
+
     </script>
-    <script src="<?php echo base_url()?>assets/js/hitua.js"></script>
-    
