@@ -163,11 +163,9 @@ class Admin extends CI_Controller
 		$this->cek_login();
 		$password=$this->input->post('password');
 		$password2=$this->input->post('password2');
-		
 		$data['changePassword']=$this->userModel->changepassword($password,$password2);
 		$this->load->view('admin/header');
 		$this->load->view('admin/home',$data);
-		$this->load->view('admin/footer');
 	}
 	function sendemail()
 	{
