@@ -78,7 +78,8 @@ class Admin extends CI_Controller
 	function do_upload($id)
 	{
 		echo "id".$id;
-		$config['file_name']="$id.png";
+		$namafile=$id."_".substr(md5(rand()),0,7);
+		$config['file_name']=$namafile.".png";
 		$config['upload_path'] = './picture/';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size']	= '4000';
@@ -96,6 +97,7 @@ class Admin extends CI_Controller
 			$data = array('upload_data' => $this->upload->data());
 
 		}
+		$this->barangmodel->updateNamaFoto($id,$namafile);
 		return $config['file_name'];
 	}
 	
@@ -121,13 +123,15 @@ class Admin extends CI_Controller
 	{
 		$this->cek_login();
 		$id=$this->input->post('id');
-		$this->hapusfoto($id);
+		$namafile=$this->barangmodel->getnamafile($id);
+		$this->hapusfoto($namafile[0]['FOTO']);
 		$filename = $this->do_upload($id);
 		redirect($this->agent->referrer());
 	}
 	
 	public function hapusfoto($id)
 	{
+
 		$path="./picture/$id.png";
 		if (unlink($path));
 	}
@@ -136,7 +140,8 @@ class Admin extends CI_Controller
 	{
 		$this->cek_login();
 		$id=$this->input->post('id');
-		$this->hapusfoto($id);
+		$namafile=$this->barangmodel->getnamafile($id);
+		$this->hapusfoto($namafile[0]['FOTO']);
 		$this->barangmodel->hapus_barang($id);
 		redirect(base_url()."admin_page/listBarang");
 	}

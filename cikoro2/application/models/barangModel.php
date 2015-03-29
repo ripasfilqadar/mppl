@@ -67,4 +67,15 @@ class Barangmodel extends CI_Model
 		$query=$this->db->query($sql);
 		return $query->result();
 	}
+	function updateNamaFoto($id,$namafile)
+	{
+		$sql="update barang set foto='$namafile' where id_barang='$id'";
+		$query=$this->db->query($sql);
+	}
+	function getnamafile($id)
+	{
+		$sql="select * from barang where id_barang='$id'";
+		$query=$this->db->query($sql);
+		return $query->result_array();
+	}
 }
