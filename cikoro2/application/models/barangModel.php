@@ -24,10 +24,15 @@ class Barangmodel extends CI_Model
 		$this->db->insert('barang',$data);
 
 		$sql='select id_barang from barang order by id_barang desc limit 1';
-		$id=$this->db->query($sql);
-		$id=$id->result_array();
-		$id=$this->updateFoto($id[0]['id_barang']);
-		return $id;
+		try {
+			$id=$this->db->query($sql);
+			$id=$id->result_array();
+			$id=$this->updateFoto($id[0]['id_barang']);
+			return $id;
+		} catch (Exception $e) {
+			echo $e->message();
+		}
+		
 	}
 	function updateFoto($id)
 	{
