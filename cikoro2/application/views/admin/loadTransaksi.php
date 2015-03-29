@@ -4,6 +4,7 @@
 		{
 		  "id": "<?php  echo $row->ID_TRANSAKSI; ?>",
 		  "nama": "<?php  echo $row->NAMA_PEMBELI; ?>",
+		  "hp": "<?php echo $row->NO_HP?>",
 		  "total": "<?php echo $row->TOTAL?>",
 		  "status": "<?php if ($row->STATUS==0){echo 'Belum Melakukan Pembayaran';} elseif ($row->STATUS==1) {
 		  	echo 'Sudah Membayar';

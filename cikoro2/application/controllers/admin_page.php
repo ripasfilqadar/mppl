@@ -79,6 +79,7 @@ class Admin_page extends CI_Controller
 	}
 	function pesan()
 	{
+		$this->cek_login();
 		$this->load->view('admin/header');
 		$this->load->view('admin/pesan');
 		$this->load->view('admin/footer');

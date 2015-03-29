@@ -40,6 +40,7 @@
                 <tr>
                     <th class="text-left">ID Transaksi</th>
                     <th class="text-left">Nama Pembeli</th>
+                    <th class="text-left">NO HP</th>
                     <th class="text-left">Total Harga</th>
                     <th class="text-left">Status</th>
                     <th class="text-left">Ubah Status</th>
@@ -52,6 +53,7 @@
                 <tr>
                     <th class="text-left">ID Transaksi</th>
                     <th class="text-left">Nama Pembeli</th>
+                    <th class="text-left">NO HP</th>
                     <th class="text-left">Total Harga</th>
                     <th class="text-left">Status</th>
                     <th class="text-left">Ubah Status</th>
@@ -68,6 +70,7 @@
                         "aoColumns": [
                             { "mData": "id" },
                             { "mData": "nama" },
+                            { "mData": "hp" },
                             { "mData": "total" },
                             { "mData": "status" },
                             { "mData": "ubahstatus" },
