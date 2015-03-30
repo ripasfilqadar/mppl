@@ -189,6 +189,7 @@ class Admin extends CI_Controller
 	    $this->email->to($email);
 	    $this->email->subject('Hi Costumer');
 	    $this->email->message($pesan);
+	    print_r($this->email);
 	    //also this script
 	    //$this->email->attach($file);
 	    // The email->send() statement will return a true or false
@@ -200,6 +201,46 @@ class Admin extends CI_Controller
 	    else {
 	    echo $this->email->print_debugger();
       }
+      /*// Set SMTP Configuration
+		$emailConfig = array(
+		   'protocol' => 'smtp',
+		    'smtp_host' => 'ssl://smtp.googlemail.com',
+		    'smtp_port' => 465,
+		    'smtp_user' => 'ripas.filqadar@gmail.com',
+		    'smtp_pass' => 'inumancity',
+		    'mailtype'  => 'html', 
+		    'charset'   => 'iso-8859-1'
+		);
+		 
+		// Set your email information
+		$from = array('email' => 'ripas.filqadar@gmail.com', 'name' => 'Your Name');
+		$to = array('rif2602@gmail.com');
+		$subject = 'Your gmail subject here';
+		 
+		$message = 'Type your gmail message here';
+		// Load CodeIgniter Email library
+		$this->load->library('email', $emailConfig);
+		 
+		// Sometimes you have to set the new line character for better result
+		$this->email->set_newline("rn");
+		// Set email preferences
+		$this->email->from($from['email'], $from['name']);
+		$this->email->to($to);
+		 
+		$this->email->subject($subject);
+		$this->email->message($message);
+		// Ready to send email and check whether the email was successfully sent
+		print_r($this->email);
+		$this->email->send();
+		/*if (!$this->email->send()) {
+		    // Raise error message
+		    show_error($this->email->print_debugger());
+		}
+		else {
+		    // Show success notification or other things here
+		    echo 'Success to send email';
+		}*/
+		 
 	}
 }
 
